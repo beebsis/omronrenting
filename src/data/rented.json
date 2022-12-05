@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "name": "alexander pedersen",
+        "studentNumber": "alex5562",
+        "startTerm": "21-10-2022",
+        "endTerm": "22-12-2022",
+        "role": "administrator",
+        "status": "rented",
+        "equipmentInfo": [
+            "DELL",
+            "Inspiron 9300",
+            "0722"
+        ],
+        "type":"PC",
+        "quantity":"1"
+    },
+    {
+        "id": "2",
+        "name": "alexander pedersen",
+        "studentNumber": "alex5562",
+        "startTerm": "21-10-2022",
+        "endTerm": "22-12-2022",
+        "role": "administrator",
+        "status": "reserved",
+        "equipmentInfo": [
+            "Razer",
+            "Deathadder V2",
+            "7248"
+        ],
+        "type":"Mouse",
+        "quantity":"1"
+    },
+    {
+        "id": "3",
+        "name": "alexander pedersen",
+        "studentNumber": "alex5562",
+        "startTerm": "21-10-2022",
+        "endTerm": "22-12-2022",
+        "role": "administrator",
+        "status": "overdue",
+        "equipmentInfo": [
+            "Razer",
+            "Barracuda X",
+            "0885"
+        ],
+        "type":"Headset",
+        "quantity":"1"
+    }
+]

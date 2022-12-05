@@ -1,0 +1,144 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  max-width: 100vw;
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.App {
+  width: 100%;
+}
+
+.home-page-container {
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-left: 128rem;
+}
+
+.home-page-container h1 { 
+  font-size: calc(64rem / 1.2);
+}
+
+.info-hero {
+  font-weight: bold;
+  max-width: 45vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.info-hero-header, .info-hero-btns {
+  width: 100%;
+}
+
+.info-hero p {
+  margin-top: 16rem;
+  font-size: 16rem;
+  color: var(--third-color);
+}
+
+.info-hero-btns {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 25rem;
+  margin-top: 55rem;
+}
+
+/*? Hero Project right section */
+.side-panel {
+  font-weight: bold;
+  max-width: 50vw;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.side-panel-header {
+  font-weight: bold;
+  display: flex;
+  flex-direction: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-right: 50rem;
+}
+
+.project-hero-header p {
+  font-size: 14rem;
+}
+
+.splitter {
+padding: 5rem;
+border-radius: 50rem;
+min-height: 375rem;
+background: linear-gradient(180deg, rgba(61, 253, 151, 0.685) 0%, rgba(77, 166, 243, 0.651) 100%);
+}
+
+.login-panel {
+  margin-left: 50rem;
+  width: 100%;
+}
+
+
+@media (max-width: 1280px) {
+  .Content {
+    padding-top: 125rem;
+  }
+
+  .splitter {
+    display: none;
+  }
+}
+
+@media (max-width: 1100px) {
+  .home-page-container {
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 80vw;
+  }
+   
+  .info-links {
+    display: none;
+  }
+
+  .login-panel-student {
+    margin-left: 0;
+    margin-top: 15rem;
+  }
+
+  .info-hero, .info-hero-header {
+    max-width: inherit;
+    width: 100%;
+  }
+
+  .info-hero-header p {
+    max-width: 80vw;
+    width: 100%;
+  }
+
+  .info-hero-btns {
+    justify-content: flex-start;
+  }
+
+  .info-hero .btns-link {
+    padding: 1em 2em 1em 2em;
+    display:block;
+    margin:0.4em;
+  }
+} 

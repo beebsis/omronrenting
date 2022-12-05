@@ -1,0 +1,72 @@
+table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 14em;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+table thead tr {
+    background: radial-gradient(181.17% 3716.78% at -8.44% 52.94%, #62EDA2 0%, #00A3FF 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    color: #ffffff;
+    text-align: center;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 2px solid #009879;
+}
+
+
+.OutOfStock, .overdue, .inv-OOF {
+    color: var(--warning-color);
+}
+
+.Reserved, .reserved, .inv-r {
+    color: var(--radient2-color);
+}
+
+.InStock, .rented, .inv-IS {
+    color: var(--radient1-color);
+}
+
+.rented-background, .inv-IS-background {
+    background-color: var(--radient1-color);
+}
+
+.reserved-background, .inv-r-background {
+    background-color: var(--radient2-color);
+}
+
+.overdue-background, .inv-OOF-background{
+    background-color: var(--warning-color);
+}
+
+
+th {
+    text-transform: uppercase;
+}
+
+td {
+    text-transform: capitalize;
+}
+
+.status-circle {
+    height: 20rem;
+    width: 20rem;
+    border-radius: 50%;
+}
+
+.rented-status, .inv {
+    display: flex;
+    gap: 15rem;
+    justify-content: flex-end;
+}

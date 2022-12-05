@@ -1,0 +1,165 @@
+.App-header {
+    display: flex;
+    align-items: center;
+    font-size: 26rem;
+    position: absolute;
+    width: 100%;
+}
+
+header {
+    color: #1E1E24;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+    padding: 15rem;
+}
+
+nav,
+.brand-container,
+.nav-container ul,
+.user-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15rem;
+}
+
+nav {
+    width: 100%;
+    font-weight: bold;
+    z-index: 12;
+}
+
+nav img {
+    max-width: 38px;
+    width: 100%;
+    height: auto;
+}
+
+.nav-container ul {
+    list-style: none;
+    color: #B1B1B1;
+    width: auto;
+    gap: 30rem;
+}
+
+header h3, header p {
+    color: #FFFFFF;
+}
+
+header h1 {
+    font-size: 24rem;
+}
+
+header p,
+header li {
+    font-size: 14rem;
+}
+.nav-container ul > .active {
+    background: radial-gradient(181.17% 3716.78% at -8.44% 52.94%, #62EDA2 0%, #00A3FF 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    border-bottom: 3rem solid;
+    border-image: radial-gradient(181.17% 3716.78% at -8.44% 52.94%, #62EDA2 0%, #00A3FF 100%);
+    border-image-slice: 1;
+}
+
+.user-info-container {
+    text-align: right;
+}
+
+.nav-container ul > li > a {
+    border-bottom: 3rem solid transparent;
+    color: var(--third-color);
+    padding-bottom: 10rem;
+    transition: all ease-in-out .3s;
+}
+
+.active,
+.nav-container ul > li > a:hover,
+.nav-container ul > li > a:focus {
+    border-bottom: 3rem solid var(--radient2-color);
+    background: radial-gradient(181.17% 3716.78% at -8.44% 52.94%, #62EDA2 0%, #00A3FF 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+}
+
+.openNav {
+    display: none;
+}
+
+.overlay {
+    width: 100%;
+    display: flex;
+}
+
+.navbar-wrapper {
+    width: 100%;
+}
+
+.logo-container {
+    display: flex;
+    gap: .75em;
+}
+
+@media (max-width: 950px) {
+
+    .App-header {
+        padding: 0;
+        margin: 0;
+    }
+    
+    nav {
+        position: relative;
+    }
+    .overlay {
+        width: 0;
+        top: 0;
+        left: 0;
+        position: absolute;
+        position: fixed;
+        transition: .5s;
+        z-index: 1;
+        overflow-x: hidden;
+        background-color: #111;
+    }
+    .fa {
+        font-size: 32rem;
+        color: white;
+        display: inline-block;
+    }
+    .nav-container ul {
+        margin: 0;
+    }
+    .openNav {
+        display: inline-block;
+        background-color: transparent;
+        border: none;
+    }
+    .App-header, nav, .nav-container ul, .brand-container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .user-container {
+        justify-content: flex-start;
+    }
+    .brand-container h3, .brand-container img, .user-container {
+        display: none;
+    }
+    .navbar-wrapper {
+        display: flex;
+        gap: 15px;
+    }
+    .brand-container {
+        margin-top: 50rem;
+    }
+
+    .openNav {
+        z-index: 99
+    }
+}

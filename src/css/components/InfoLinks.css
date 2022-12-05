@@ -1,0 +1,29 @@
+.info-links {
+    margin-top: 120rem;
+    width: 100%;
+    font-size: 16rem;
+    color: var(--third-color);
+    font-weight: bold;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25rem;
+}
+
+.link_reference {
+    text-align: center;
+    margin-top: 30rem;
+}
+
+.link_reference img {
+    max-height: 38px;
+    width: auto;
+}
+
+.link_reference p { 
+    margin-top: 16rem;
+}

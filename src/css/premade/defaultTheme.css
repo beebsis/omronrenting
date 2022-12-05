@@ -1,0 +1,13 @@
+:root {
+    /*! work in shades if needed*/
+ 
+    --base-color: #12151D;
+    --secondary-color: #1B1F2B;
+    --third-color: #B1B1B1;
+
+    --radient1-color: #62EDA2;
+    --radient2-color: #00A3FF;
+    --warning-color: #ED6262;
+
+    --test-gradient: linear-gradient(#e66465, #9198e5);
+}

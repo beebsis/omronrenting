@@ -1,0 +1,110 @@
+{
+    "computers":
+    [
+        {
+            "id":"1",
+            "mfr":"DELL",
+            "model":"Inspiron 9300",
+            "serial":"0722",
+            "type":"pc",
+            "status": [
+                "inv-IS",
+                "In Stock"
+            ]
+        },
+        {
+            "id":"2",
+            "mfr":"HP",
+            "model":"Elite Tower 600",
+            "serial":"7236",
+            "type":"pc",
+            "status": [
+                "inv-OOF",
+                "Out of Stock"
+            ]
+        },
+        {
+            "id":"3",
+            "mfr":"HP",
+            "model":"Elite SFF 600",
+            "serial":"6204",
+            "type":"pc",
+            "status": [
+                "inv-r",
+                "Reserved"
+            ]
+        }
+    ],
+    "mouse":
+    [
+        {
+            "id":"1",
+            "mfr":"Razer",
+            "model":"Deathadder V2",
+            "serial":"7248",
+            "type":"mouse",
+            "status": [
+                "inv-IS",
+                "In Stock"
+            ]
+        },
+        {
+            "id":"2",
+            "mfr":"Logitech",
+            "model":"MX Master 3S",
+            "serial":"8321",
+            "type":"mouse",
+            "status": [
+                "inv-OOF",
+                "Out of Stock"
+            ]
+        },
+        {
+            "id":"3",
+            "mfr":"Corsair",
+            "model":"Scimitar Elite",
+            "serial":"9109",
+            "type":"mouse",
+            "status": [
+                "inv-r",
+                "Reserved"
+            ]
+        }
+    ],
+    "headset":
+    [
+        {
+            "id":"1",
+            "mfr":"Audio Technica",
+            "model":"ATH-M20X",
+            "serial":"0623",
+            "type":"headset",
+            "status": [
+                "inv-IS",
+                "In Stock"
+            ]
+        },
+        {
+            "id":"2",
+            "mfr":"HyperX",
+            "model":"Cloud alpha",
+            "serial":"0765",
+            "type":"headset",
+            "status": [
+                "inv-OOF",
+                "Out of Stock"
+            ]
+        },
+        {
+            "id":"3",
+            "mfr":"Razer",
+            "model":"Barracuda X",
+            "serial":"0885",
+            "type":"headset",
+            "status": [
+                "inv-r",
+                "Reserved"
+            ]
+        }
+    ]
+}

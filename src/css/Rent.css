@@ -1,0 +1,53 @@
+label {
+    font-weight: bold;
+}
+
+.rent-container {
+    display: flex;
+    gap: 15rem;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    height: 70rem;
+}
+
+.form-container {
+    max-width: 60vw;
+    width: 100%;
+}
+
+fieldset {
+    display: flex;
+    outline: none;
+    border: none;
+}
+
+fieldset div {
+    max-width: 500rem;
+    width: 100%;
+}
+
+.form-quan {
+    gap: 25rem;
+}
+
+.last-ff {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+}
+
+#quantity {
+    max-width: 125rem;
+    width: 100%;
+    padding-left: 15rem;
+}
+
+.last-ff select {
+    width: 80rem;
+    height: 20rem;
+}

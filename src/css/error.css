@@ -1,0 +1,35 @@
+.error-container {
+    width: 100vw;
+    height: 70vh;
+}
+
+.error-container div {
+    margin: 0 auto;
+    text-align: center;
+    height: 500rem;
+    width: 1080rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50rem; 
+    background: radial-gradient(181.17% 3716.78% at -8.44% 52.94%, #62EDA2 0%, #00A3FF 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 1rem;
+    border: 3rem solid;
+    border-image: radial-gradient(181.17% 3716.78% at -8.44% 52.94%, #62EDA2 0%, #00A3FF 100%);
+    border-image-slice: 1;
+}
+
+.error-container div h1 {
+    font-size: 64rem;
+    
+}
+
+.error-container div h2 {
+    font-size: 32rem;
+}
+
+
+

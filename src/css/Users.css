@@ -1,0 +1,22 @@
+.userlist-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    color: white;
+    max-width: 75vw;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.userlist-container-header, .fa-solid {
+    font-size: 20rem;
+}
+
+.add-user {
+    color: green;
+}
+
+.table-container, table {
+    width: 100%;
+}
