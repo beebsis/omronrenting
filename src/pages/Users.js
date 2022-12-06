@@ -1,5 +1,6 @@
 import '../css/Users.css';
 import '../css/components/table.css';
+import userData from '../data/users.json';
 
 
 export default function Users () {
@@ -8,36 +9,103 @@ export default function Users () {
             <div className="userlist-container">
                 <div className="userlist-container-header">
                     <h1>Add User <span className="add-user">+</span> </h1>
+                    <input placeholder="Search . . . " name="SearchUser"></input>
                 </div>
                 <div className="table-container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th className="studentNumber">Student #</th>
-                                <th>Name</th>
-                                <th>Address</th>
-                                <th>City</th>
-                                <th>ZIP</th>
-                                <th>CPR #</th>
-                                <th>Email</th>
-                                <th>Class</th>
-                                <th>Role</th>
-                            </tr>
-                        </thead>
-                        <tbody
-                            ><tr>
-                                <td>alex5562</td>
-                                <td>Alexander Pedersen</td>
-                                <td>Østergade 11g</td>
-                                <td>Vissenbjerg</td>
-                                <td>5492</td>
-                                <td>000000-0000</td>
-                                <td>alex5562@edu.sde.dk</td>
-                                <td>H291</td>
-                                <td>Administrator</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div className="userList">
+
+                    {userData.map((postUserData, i) => {
+                                console.log(postUserData, i);
+                                return (
+                                    <div className="user" key={i}>
+                                        <div className="userBorder">
+                                            <div className="table-grid">
+                                                <div className="userList_id">
+                                                    <span className="userList_header_text">UNI-ID</span>
+                                                    <span className="userList_userinfo">{postUserData.studentNumber}</span>
+                                                </div>
+                                                <div className="userList_name">
+                                                    <span className="userList_header_text">Name</span>
+                                                    <span className="userList_userinfo">{postUserData.name}</span>
+                                                </div>
+                                                <div className="userList_address">
+                                                    <span className="userList_header_text">Address</span>
+                                                    <span className="userList_userinfo">{postUserData.addressInfo.address}</span>
+                                                </div>
+                                                <div className="userList_city">
+                                                    <span className="userList_header_text">City</span>
+                                                    <span className="userList_userinfo">{postUserData.addressInfo.City}</span>
+                                                </div>
+                                                <div className="userList_zip">
+                                                    <span className="userList_header_text">Zip</span>
+                                                    <span className="userList_userinfo">{postUserData.addressInfo.ZIP}</span>
+                                                </div>
+                                                <div className="userList_cpr">
+                                                    <span className="userList_header_text">CPR</span>
+                                                    <span className="userList_userinfo">{postUserData.CPR}</span>
+                                                </div>
+                                                <div className="userList_email">
+                                                    <span className="userList_header_text">Email</span>
+                                                    <span className="userList_userinfo">{postUserData.Email}</span>
+                                                </div>
+                                                <div className="userList_class">
+                                                    <span className="userList_header_text">Class</span>
+                                                    <span className="userList_userinfo">{postUserData.team}</span>
+                                                </div>
+                                                <div className="userList_role">
+                                                    <span className="userList_header_text">Role</span>
+                                                    <span className="userList_userinfo">{postUserData.role}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        {/*
+                        <div className="user">
+                            <div className="userBorder">
+                                <div className="table-grid">
+                                    <div className="userList_id">
+                                        <span className="userList_header_text">UNI-ID</span>
+                                        <span className="userList_userinfo">Alex5562</span>
+                                    </div>
+                                    <div className="userList_name">
+                                        <span className="userList_header_text">Name</span>
+                                        <span className="userList_userinfo">Alexander Pedersen</span>
+                                    </div>
+                                    <div className="userList_address">
+                                        <span className="userList_header_text">Address</span>
+                                        <span className="userList_userinfo">Rosengårdsvej 11g</span>
+                                    </div>
+                                    <div className="userList_city">
+                                        <span className="userList_header_text">City</span>
+                                        <span className="userList_userinfo">Vissenbjerg</span>
+                                    </div>
+                                    <div className="userList_zip">
+                                        <span className="userList_header_text">Zip</span>
+                                        <span className="userList_userinfo">5492</span>
+                                    </div>
+                                    <div className="userList_cpr">
+                                        <span className="userList_header_text">CPR</span>
+                                        <span className="userList_userinfo">000000-0000</span>
+                                    </div>
+                                    <div className="userList_email">
+                                        <span className="userList_header_text">Email</span>
+                                        <span className="userList_userinfo">alex5562@edu.sde.dk</span>
+                                    </div>
+                                    <div className="userList_class">
+                                        <span className="userList_header_text">Class</span>
+                                        <span className="userList_userinfo">H291</span>
+                                    </div>
+                                    <div className="userList_role">
+                                        <span className="userList_header_text">Role</span>
+                                        <span className="userList_userinfo">Administrator</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        */}
+                    </div>
                 </div>
             </div>
         </>

@@ -14,6 +14,7 @@ table thead tr {
 
     color: #ffffff;
     text-align: center;
+    font-size: clamp(20.5rem, 2vw + 8rem, 12.25rem);
 }
 
 table th,
@@ -69,4 +70,57 @@ td {
     display: flex;
     gap: 15rem;
     justify-content: flex-end;
+}
+
+@media (max-width: 500px) {
+
+    table thead tr {
+        font-size: calc(25px + 16 * ((100vw - 568px) / (768 - 568)));
+    }
+    table tbody tr {
+        font-size: calc(15px + 16 * ((100vw - 568px) / (768 - 568)));
+    }
+}
+
+@media (max-width: 576px) {
+    .table-container h3 {
+        text-align: center;
+        font-size: calc(25px + 16 * ((100vw - 568px) / (768 - 568)));
+    }
+    .inventory {
+        padding: 0;
+        margin-top: 75em;
+    }
+    .status-circle {
+        display: none;
+    }
+
+    table thead tr {
+        font-size: calc(20px + 4 * ((100vw - 568px) / (768 - 568)));
+    }
+    table tbody tr {
+        font-size: calc(15px + 4 * ((100vw - 568px) / (768 - 568)));
+    }
+    
+    table {
+        max-width: 80vw;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+    
+}
+
+@media (min-width: 1200px) {
+    
+}
+
+@media (min-width: 1400px) {
+    
 }

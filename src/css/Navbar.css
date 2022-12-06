@@ -116,6 +116,11 @@ a {
     nav {
         position: relative;
     }
+
+    nav button {
+        margin: 0 auto;
+        margin-top: 1em;
+    }
     .overlay {
         width: 0;
         top: 0;

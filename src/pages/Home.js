@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import InfoLinks from '../components/InfoLinks.js';
 import '../css/Main.css';
 import '../css//components/buttons.css';
@@ -15,8 +15,8 @@ export default function Home() {
                         <p>The management of Inventory, users as well as equipment lending and tracking. Preserve the inventory histroy here.</p>
                     </div>
                     <div className="info-hero-btns">
-                        <Link className="btns-link">Student</Link>
-                        <Link className="btns-link">Management</Link>
+                        <button type="button" className="btns">Student</button>
+                        <button type="button" className="btns">Management</button>
                     </div>
                     <InfoLinks />
                 </div>

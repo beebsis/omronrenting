@@ -28,7 +28,6 @@ export default function App() {
           <nav>
             <button className="openNav" id="navBtn" type="button">
               <FontAwesomeIcon className="fa" icon={faBars}></FontAwesomeIcon>
-              test
             </button>
             <div className="overlay" id="overlay">
               <div className="navbar-wrapper">

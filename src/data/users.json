@@ -1,0 +1,47 @@
+[
+    {
+        "id": 1,
+        "name": "alexander pedersen1",
+        "studentNumber": "alex5562",
+        "CPR": "000000-0000",
+        "Email": "alex5562@edu.sde.dk",
+        "team": "H291",
+        "role": "administrator",
+        "addressInfo": {
+            "address": "Rosengårdsvej 11g",
+            "City": "Vissenbjerg",
+            "ZIP": "5492"
+        }
+        
+    },
+    {
+        "id": 2,
+        "name": "alexander pedersen2",
+        "studentNumber": "alex5562",
+        "CPR": "000000-0000",
+        "Email": "alex5562@edu.sde.dk",
+        "team": "H291",
+        "role": "administrator",
+        "addressInfo": {
+            "address": "Rosengårdsvej 11g",
+            "City": "Vissenbjerg",
+            "ZIP": "5492"
+        }
+        
+    },
+    {
+        "id": 3,
+        "name": "alexander pedersen3",
+        "studentNumber": "alex5562",
+        "CPR": "000000-0000",
+        "Email": "alex5562@edu.sde.dk",
+        "team": "H291",
+        "role": "administrator",
+        "addressInfo": {
+            "address": "Rosengårdsvej 11g",
+            "City": "Vissenbjerg",
+            "ZIP": "5492"
+        }
+        
+    }
+]

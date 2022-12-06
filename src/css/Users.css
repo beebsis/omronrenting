@@ -1,8 +1,4 @@
 .userlist-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
     color: white;
     max-width: 75vw;
     width: 100%;
@@ -13,10 +9,150 @@
     font-size: 20rem;
 }
 
+.userlist-container-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: clamp(15.5rem, 2vw + 8rem, 12.25rem);
+}
+
+.userlist-container-header input {
+    max-width: 460px;
+    width: 100%;
+    height: 50rem;
+    border-radius: 10rem; 
+    outline: none;
+    padding-left: 20rem;
+    font-size: 16rem;
+    border: 2rem solid var(--third-color);
+    background: radial-gradient(#62eda3 0%, #62ABED 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+input:hover, input:focus {
+    border: 3rem solid var(--radient2-color);
+    background: radial-gradient(#62eda3 0%, #62ABED 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 .add-user {
     color: green;
 }
 
-.table-container, table {
+.table-container {
+    margin: 0 auto;
+    margin-top: 2vh;
     width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    background-color: #12151d;
+    border-radius: 15px 15px 0 0;
+    padding-top: 15px;
+}
+
+
+
+.userList {
+    font-size: 14em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    width: 100%;
+}
+
+.table-grid {
+
+    --grid-layout-gap: 10px;
+    --grid-column-count: 9;
+    --grid-item--min-width: 90px;
+
+    --gap-count: calc(var(--grid-column-count) - 1);
+    --total-gap-width: calc(var(--gap-count) * var(--grid-layout-gap));
+    --grid-item--max-width: calc((100% - var(--total-gap-width)) / var(--grid-column-count));
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
+    grid-gap: var(--grid-layout-gap);
+
+    justify-items: center;
+    align-items: center;
+
+    padding: 15px;
+    background-color: #12151d;
+    border-radius: 0 0 16px 16px;
+}
+
+.table-grid div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.userBorder {
+    padding: 0 1rem 1rem 1rem;
+    position: relative;
+    background: radial-gradient(181.17% 3716.78% at -8.44% 52.94%, #62EDA2 0%, #00A3FF 100%);
+    border-radius: 0 0 15px 15px
+}
+
+.user, .userborder {
+    width: 100%;
+}
+
+
+.table-grid > div > span:first-child {
+    font-size: clamp(15.5rem, 2vw + 8rem, 12.25rem);
+    background: radial-gradient(181.17% 3716.78% at -8.44% 52.94%, #62EDA2 0%, #00A3FF 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+@media (max-width: 576px) {
+
+    .userlist-container {
+        margin: 0;
+        max-width: 100%;
+        margin-top: 100em;
+    }
+    .userlist-container-header h1 {
+        display: none;
+    }
+
+    .userlist-container-header {
+        margin: 0 auto;
+        max-width: 80vw;
+    }
+
+    .table-container {
+        max-width: 95vw;
+    }
+
+    .userList_header_text {
+        font-size: clamp(12rem, 2vw + 8rem, 12.25rem);
+    }
+
+    .userList_userinfo {
+        font-size: clamp(10rem, 2vw + 8rem, 12.25rem);
+    }
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+    
+}
+
+@media (min-width: 1200px) {
+    
+}
+
+@media (min-width: 1400px) {
+    
 }

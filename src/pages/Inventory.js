@@ -7,7 +7,7 @@ const background = "-background status-circle";
 export default function Inventory() {
     return (
         <div className="inventory">
-            <div>
+            <div className="table-inventory-container">
                 <h3>PCs</h3>
                 <table className="inventory-pc-list">
                 <thead>
@@ -37,7 +37,7 @@ export default function Inventory() {
                 </tbody>
             </table>
             </div>
-            <div>
+            <div className="table-inventory-container">
                 <h3>Mouse</h3>
                 <table className="inventory-mouse-list">
                 <thead>
@@ -67,7 +67,7 @@ export default function Inventory() {
                 </tbody>
             </table>
             </div>
-            <div>
+            <div className="table-inventory-container">
                 <h3>Headset</h3>
                 <table className="inventory-mouse-list">
                 <thead>

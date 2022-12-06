@@ -95,50 +95,80 @@ background: linear-gradient(180deg, rgba(61, 253, 151, 0.685) 0%, rgba(77, 166, 
   width: 100%;
 }
 
-
-@media (max-width: 1280px) {
+@media (max-width: 576px) {
   .Content {
-    padding-top: 125rem;
+    padding: 0;
+    height: 100vh;
+    display: flex;
   }
-
-  .splitter {
-    display: none;
-  }
-}
-
-@media (max-width: 1100px) {
   .home-page-container {
-    flex-direction: column;
     margin: 0 auto;
     max-width: 80vw;
-  }
-   
-  .info-links {
-    display: none;
+    width: 100%;
+    flex-direction: column;
   }
 
-  .login-panel-student {
-    margin-left: 0;
-    margin-top: 15rem;
-  }
-
-  .info-hero, .info-hero-header {
+  .info-hero {
     max-width: inherit;
     width: 100%;
   }
 
-  .info-hero-header p {
-    max-width: 80vw;
-    width: 100%;
+  .splitter, .info-links {
+    display: none;
   }
 
   .info-hero-btns {
-    justify-content: flex-start;
+    margin-top: 20rem;
   }
 
-  .info-hero .btns-link {
-    padding: 1em 2em 1em 2em;
-    display:block;
-    margin:0.4em;
+  .login-panel {
+    margin: 0 auto;
   }
-} 
+}
+
+@media (max-width: 576px) {
+  .Content {
+    padding: 0;
+    height: 100vh;
+    display: flex;
+  }
+  .home-page-container {
+    margin: 0 auto;
+    max-width: 80vw;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .info-hero {
+    max-width: inherit;
+    width: 100%;
+  }
+
+  .splitter, .info-links {
+    display: none;
+  }
+
+  .info-hero-btns {
+    margin-top: 20rem;
+  }
+
+  .login-panel {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+    
+}
+
+@media (min-width: 1200px) {
+    
+}
+
+@media (min-width: 1400px) {
+    
+}
