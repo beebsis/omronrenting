@@ -39,6 +39,10 @@
   align-items: flex-start;
 }
 
+.info-hero-header {
+  padding-right: 50px;
+}
+
 .info-hero-header, .info-hero-btns {
   width: 100%;
 }
