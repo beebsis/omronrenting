@@ -22,7 +22,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-left: 128rem;
+  margin: 0 auto;
 }
 
 .home-page-container h1 { 
@@ -37,6 +37,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-left: 15vw;
 }
 
 .info-hero-header {
@@ -45,11 +46,12 @@
 
 .info-hero-header, .info-hero-btns {
   width: 100%;
+  max-width: 664px;
 }
 
 .info-hero p {
   margin-top: 16rem;
-  font-size: 16rem;
+  font-size: 26rem;
   color: var(--third-color);
 }
 
