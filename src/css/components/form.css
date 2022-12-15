@@ -10,7 +10,6 @@ form {
 form label {
     font-size: 24rem;
     color: var(--third-color);
-    display: block;
 }
 
 form input {
@@ -54,6 +53,18 @@ form button:hover, form button:focus {
     background: radial-gradient(181.17% 3716.78% at -8.44% 52.94%, #62EDA2 0%, #00A3FF 100%);
     background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+label .hide {
+    display: none;
+}
+
+label .valid {
+    color: var(--radient1-color);
+}
+
+label .invalid {
+    color: var(--warning-color);
 }
 
 

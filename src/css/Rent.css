@@ -19,13 +19,13 @@ input {
     width: 100%;
 }
 
-fieldset {
+.rent-fieldset {
     display: flex;
     outline: none;
     border: none;
 }
 
-fieldset div {
+.rent-fieldset div {
     max-width: 500rem;
     width: 100%;
 }

@@ -14,6 +14,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 //Hooks
+import UserRegister from "./hooks/userRegister";
 
 import profilePicture from "./assets/logo.png";
 import "./css/Navbar.css";
@@ -59,6 +60,11 @@ export default function App() {
                       <li>
                         <NavLink to="MyRents">My Rents</NavLink>
                       </li>
+                      {/* 
+                      <li>
+                        <NavLink to="UserRegister">Registration</NavLink>
+                      </li>
+                      */}
                     </ul>
                   </div>
 
@@ -95,9 +101,12 @@ export default function App() {
               <Route path="/rented" element={<RentedList />} />
               <Route path="/rent" element={<Rent />} />
               <Route path="/myrents" element={<MyRents />} />
+              {/* Hook routes */}
+              <Route path="/UserRegister" element={<UserRegister />} />
 
               {/* Catch all routes */}
               <Route path="*" element={<Missing />} />
+
             </Routes>
           </div>
         </main>

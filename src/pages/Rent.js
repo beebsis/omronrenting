@@ -7,8 +7,8 @@ export default function Rent() {
         <>
         <div className="rent-container">
             <div className="form-container">
-                <form action="">
-                    <fieldset>
+                <form action="" className="rent-form">
+                    <fieldset className="rent-fieldset">
                         <div className="form-flexer">
                             <label>Username</label>
                             <input name="username" placeholder="Username . . ."></input>
@@ -18,7 +18,7 @@ export default function Rent() {
                             <input name="studentNumber" placeholder="Uni-loigin . . ."></input>
                         </div>
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="rent-fieldset">
                         <div className="form-flexer">
                             <label>Manufacturer</label>
                             <input name="Manufacturer" placeholder="Manufacturer . . ."/>
@@ -28,7 +28,7 @@ export default function Rent() {
                             <input name="Model" placeholder="Model . . ."></input>
                         </div>
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="rent-fieldset">
                         <div className="form-flexer">
                             <label>Device Number</label>
                             <input name="deviceNumber" placeholder="Device Number . . ."></input>        
@@ -48,7 +48,7 @@ export default function Rent() {
                             </div>
                         </div>
                     </fieldset>
-                    <fieldset>
+                    <fieldset className="rent-fieldset">
                         <div className="form-flexer">
                             <label>Start term</label>
                             <input name="start_term" type="date"></input>
