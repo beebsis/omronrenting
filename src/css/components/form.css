@@ -5,6 +5,7 @@ form {
     width: 100%;
     justify-content: center;
     align-items: left;
+    margin: 0 auto;
 }
 
 form label {
@@ -70,8 +71,9 @@ label .invalid {
 
 @media (max-width: 576px) {
     form input {
-        font-size: calc(29px + 16 * ((100vw - 568px) / (768 - 568)));
-        width: 100%;
+        font-size: calc(29px + 16 * ((100vw - 440px) / (768 - 568)));
+        width: 80%;
+        margin: 0 auto;
         height: 2.75em;
         padding-left: 15px;
     }    

@@ -29,13 +29,52 @@ export default function Register() {
     const [validName, setValidName] = useState(false);
     const [userFocus, setUserFocus] = useState(false);
 
+    //  Password
     const [pwd, setPwd] = useState('');
     const [validPwd, setValidPwd] = useState(false);
     const [pwdFocus, setPwdFocus] = useState(false);
 
+    // Matching password
     const [matchPwd, setMatchPwd] = useState('');
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
+
+    // Firstname
+    const [firstname, setFirstname] = useState('');
+    const [validFirstname, setValidFirstname] = useState(false)
+
+    // Lastname
+    const [lastname, setLastname] = useState('');
+    const [validLastname, setValidLastname] = useState(false)
+    
+    // CPR
+    const [CPR, setCPR] = useState('');
+    const [validCPR, setValidCPR] = useState(false)
+
+    // Email
+    const [email, setEmail] = useState('');
+    const [validEmail, setValidEmail] = useState(false);
+
+    // uniId
+    const [uniId, setUniId] = useState('');
+    const [validUniId, setValidUniId] = useState(false);
+
+    // Address
+    const [address, setAddress] = useState('');
+    const [validAddress, setValidAddress] = useState(false)
+
+    // City
+    const [city, setCity] = useState('');
+    const [validCity, setValidCity] = useState(false)
+    
+    // Postal
+    const [postal, setPostal] = useState('');
+    const [validPostal, setValidPostal] = useState(false)
+    
+    // StamClass
+    const [stamClass, setStamClass] = useState('');
+    const [validStamClass, setValidStamClass] = useState(false)
+    
 
     //Info message states
     const [errMsg, setErrMsg] = useState('');
@@ -129,7 +168,7 @@ export default function Register() {
                     <label htmlFor="password">
                         Password:
                         <FontAwesomeIcon icon={faCheckCircle} className={validPwd ? "valid" : "hide"} />
-                        <FontAwesomeIcon icon={faCircleExclamation} className={validPwd || !user ? "hide" : "invalid"} />
+                        <FontAwesomeIcon icon={faCircleExclamation} className={validPwd || !pwd ? "hide" : "invalid"} />
                     </label>
                     <input 
                         type="password"
@@ -156,9 +195,9 @@ export default function Register() {
 
                 <fieldset>
                     <label htmlFor="confirm_pwd">
-                        Confirm Password:
+                        Confirm Password Match:
                         <FontAwesomeIcon icon={faCheckCircle} className={validMatch ? "valid" : "hide"} />
-                        <FontAwesomeIcon icon={faCircleExclamation} className={validMatch || !user ? "hide" : "invalid"} />
+                        <FontAwesomeIcon icon={faCircleExclamation} className={validMatch || !matchPwd ? "hide" : "invalid"} />
                     </label>
                     <input 
                         type="password"
