@@ -1,9 +1,11 @@
 import profilePicture from '../assets/logo.png';
 import '../css/components/InfoLinks.css';
+import React, { Component } from 'react';
 
-export default function InfoLinks() {
-    return (
-        <div className="info-links">
+class InfoLinks extends Component {
+    render() {
+        return (
+            <div className="info-links">
             <p>NETWORKS</p>
             <div className="link-container">
                 <div className="link_reference">
@@ -24,5 +26,8 @@ export default function InfoLinks() {
                 </div>
             </div>
         </div>
-    );
+        )
+    }
 }
+
+export default InfoLinks;

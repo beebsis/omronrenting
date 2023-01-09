@@ -1,4 +1,4 @@
-//import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import '../css/mglandingpage.css';
 import '../css//components/buttons.css';
@@ -18,8 +18,12 @@ export default function ManagementLanding() {
                         <p>You have entered the management system area. In here you'll be able to lent equipment to tohers, check the invetory, users and reserved equipment. You cna also check what has been rented.</p>
                     </div>
                     <div className="management-buttons">
-                    <button type="button" className="btns">Rent</button>
+                    <NavLink className="NavLink-btn" to="/rent">
+                        <button type="button" className="btns">Rent</button>
+                    </NavLink>
+                    <NavLink className="NavLink-btn" to="/rented">
                         <button type="button" className="btns">Rented</button>
+                    </NavLink>
                     </div>
                     <InfoLinks />
                 </div>

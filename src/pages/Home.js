@@ -3,11 +3,11 @@ import InfoLinks from '../components/InfoLinks.js';
 import '../css/Main.css';
 import '../css//components/buttons.css';
 import Login from '../components/login';
+import React, { Component } from 'react';
 
-
-
-export default function Home() {
-    return (
+class Home extends Component {
+    render() {
+        return (
             <div className="home-page-container">
                 <div className="info-hero">
                     <div className="info-hero-header">
@@ -24,5 +24,8 @@ export default function Home() {
                 <div className="splitter"></div>
                 <Login />
             </div>
-    );
+        )
+    }
 }
+
+export default Home;

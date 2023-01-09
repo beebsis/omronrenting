@@ -1,7 +1,11 @@
-export default function Books() {
-    return (
-        <div>
-            <h1>Book Test</h1>
-        </div>
-    );
+import React, { Component } from 'react';
+
+class Contact extends Component {
+    render() {
+        return (
+            <h1>Contact Page</h1>
+        )
+    }
 }
+
+export default Contact;

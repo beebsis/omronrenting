@@ -37,7 +37,6 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  margin-left: 15vw;
 }
 
 .info-hero-header {
@@ -97,8 +96,17 @@ background: linear-gradient(180deg, rgba(61, 253, 151, 0.685) 0%, rgba(77, 166, 
 }
 
 .login-panel {
-  margin-left: 50rem;
+  max-width: 45vw;
   width: 100%;
+}
+
+.login-panel form {
+  width: 50%;
+}
+
+.login-panel form div {
+  display: flex;
+  flex-direction: column;
 }
 
 @media (max-width: 576px) {

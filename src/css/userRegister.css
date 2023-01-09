@@ -6,7 +6,16 @@
 
 .user-registration-form {
     margin: 0 auto;
-    max-width: 520px;
+    max-width: 720px;
+    padding-top: 15px;
+}
+
+.user-registration-form > div {
+    display: flex;
+    gap: 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+    padding: 15px;
 }
 
 .user-registration-form fieldset {
@@ -21,8 +30,25 @@
 .user-registration-form fieldset input {
     max-width: 100%;
     margin-top: .6em;
+    padding: 5px;
+    max-height: 50px;
 }
 
-.user-registration-form button {
+#userRegisterBtn  {
+    max-width: 100%;
+    width: 100%;
+}
+
+.register-success {
+    text-align: center;
+    font-size: 24rem;
+    color: white;
+}
+
+.register-success > div {
     margin: 0 auto;
+    max-width: 480px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 15px;
 }

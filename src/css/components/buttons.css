@@ -44,6 +44,28 @@
     -webkit-text-fill-color: transparent;
 }
 
+
+.NavLink-btn {
+    padding: 5rem 50rem 5rem 50rem;
+    background-color: var(--secondary-color);
+    outline: none;
+    color: #FFFFFF;
+    font-size: 16rem;
+    font-weight: bold;
+    border-radius: 5rem;
+    border: 3rem solid transparent;
+    transition: all ease-in-out .3s;
+}
+
+.NavLink-btn:hover
+.NavLink-btn:focus {
+    border: 3rem solid var(--radient2-color);
+    background: radial-gradient(181.17% 3716.78% at -8.44% 52.94%, #62EDA2 0%, #00A3FF 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
 @media (max-width: 576px) {
     .btns,
     button {

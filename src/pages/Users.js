@@ -1,6 +1,7 @@
 import '../css/Users.css';
 import '../css/components/table.css';
 import userData from '../data/users.json';
+import { NavLink } from 'react-router-dom';
 
 
 export default function Users () {
@@ -8,7 +9,7 @@ export default function Users () {
         <>
             <div className="userlist-container">
                 <div className="userlist-container-header">
-                    <h1>Add User <span className="add-user">+</span> </h1>
+                    <h1>Add User <span className="add-user"><NavLink to="/UserRegister">+</NavLink></span> </h1>
                     <input placeholder="Search . . . " name="SearchUser"></input>
                 </div>
                 <div className="table-container">
@@ -61,50 +62,6 @@ export default function Users () {
                                     </div>
                                 );
                             })}
-                        {/*
-                        <div className="user">
-                            <div className="userBorder">
-                                <div className="table-grid">
-                                    <div className="userList_id">
-                                        <span className="userList_header_text">UNI-ID</span>
-                                        <span className="userList_userinfo">Alex5562</span>
-                                    </div>
-                                    <div className="userList_name">
-                                        <span className="userList_header_text">Name</span>
-                                        <span className="userList_userinfo">Alexander Pedersen</span>
-                                    </div>
-                                    <div className="userList_address">
-                                        <span className="userList_header_text">Address</span>
-                                        <span className="userList_userinfo">Rosengårdsvej 11g</span>
-                                    </div>
-                                    <div className="userList_city">
-                                        <span className="userList_header_text">City</span>
-                                        <span className="userList_userinfo">Vissenbjerg</span>
-                                    </div>
-                                    <div className="userList_zip">
-                                        <span className="userList_header_text">Zip</span>
-                                        <span className="userList_userinfo">5492</span>
-                                    </div>
-                                    <div className="userList_cpr">
-                                        <span className="userList_header_text">CPR</span>
-                                        <span className="userList_userinfo">000000-0000</span>
-                                    </div>
-                                    <div className="userList_email">
-                                        <span className="userList_header_text">Email</span>
-                                        <span className="userList_userinfo">alex5562@edu.sde.dk</span>
-                                    </div>
-                                    <div className="userList_class">
-                                        <span className="userList_header_text">Class</span>
-                                        <span className="userList_userinfo">H291</span>
-                                    </div>
-                                    <div className="userList_role">
-                                        <span className="userList_header_text">Role</span>
-                                        <span className="userList_userinfo">Administrator</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        */}
                     </div>
                 </div>
             </div>
