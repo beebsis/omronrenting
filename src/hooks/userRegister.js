@@ -1,4 +1,3 @@
-import "../css/components/form.css";
 import "../css/Main.css";
 import "../css/Index.css";
 import "../css/userRegister.css";
@@ -21,6 +20,7 @@ const USER_REGEX = /^[a-zA][a-zA-Z0-9-_]{3,23}$/;
 const uniid_REGEX = /^[a-zA][a-zA-Z0-9-_]{4}$/;
 const name_REGEX = /^[A-Za-z]{1}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
+
 const REGISTER_URL = '/register';
 
 export default function Register() {
@@ -42,48 +42,48 @@ export default function Register() {
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
 
-    // Firstname
-    const [firstname, setFirstname] = useState('');
-    const [validFirstname, setValidFirstname] = useState(false);
-    const [firstnameFocus, setFirstnameFocus] = useState(false);
+    // firstN
+    const [firstN, setfirstN] = useState('');
+    const [validfirstN, setValidfirstN] = useState(false);
+    const [firstNFocus, setfirstNFocus] = useState(false);
 
-    // Lastname
-    const [lastname, setLastname] = useState('');
-    const [validLastname, setValidLastname] = useState(false);
-    const [lastnameFocus, setLastnameFocus] = useState(false);
+    // lastN
+    const [lastN, setlastN] = useState('');
+    const [validlastN, setValidlastN] = useState(false);
+    const [lastNFocus, setlastNFocus] = useState(false);
     // CPR
-    const [CPR, setCPR] = useState('');
-    const [validCPR, setValidCPR] = useState(false);
+    const [cpr, setCPR] = useState('');
+    const validCPR = useState(false);
     const [cprFocus, setCPRFocus] = useState(false);
 
     // Email
     const [email, setEmail] = useState('');
-    const [validEmail, setValidEmail] = useState(false);
+    const validEmail  = useState(false);
     const [emailFocus, setEmailFocus] = useState(false);
 
-    // uniId
-    const [uniId, setUniId] = useState('');
-    const [validUniId, setValidUniId] = useState(false);
-    const [uniidFocus, setUniIdFocus] = useState(false);
+    // uniid
+    const [uniid, setuniid] = useState('');
+    const [validuniid, setValiduniid] = useState(false);
+    const [uniidFocus, setuniidFocus] = useState(false);
 
     // Address
     const [address, setAddress] = useState('');
-    const [validAddress, setValidAddress] = useState(false);
+    const validAddress = useState(false);
     const [addressFocus, setAddressFocus] = useState(false);
 
     // City
     const [city, setCity] = useState('');
-    const [validCity, setValidCity] = useState(false);
+    const validCity = useState(false);
     const [cityFocus, setCityFocus] = useState(false);
     
     // Postal
     const [postal, setPostal] = useState('');
-    const [validPostal, setValidPostal] = useState(false);
+    const validPostal = useState(false);
     const [postalFocus, setPostalFocus] = useState(false);
     
     // StamClass
     const [stamClass, setStamClass] = useState('');
-    const [validStamClass, setValidStamClass] = useState(false);
+    const validStamClass = useState(false);
     const [stamclassFocus, setStamclassFocus] = useState(false);
     
 
@@ -105,19 +105,19 @@ export default function Register() {
     }, [user]);
 
     useEffect(() => {
-        const result = uniid_REGEX.test(uniId);
+        const result = uniid_REGEX.test(uniid);
         console.log(result);
-        console.log(uniId);
-        setValidUniId(result);
-    }, [uniId]);
+        console.log(uniid);
+        setValiduniid(result);
+    }, [uniid]);
 
     useEffect(() => {
-        const result1 = name_REGEX.test(firstname);
-        const result2 = name_REGEX.test(lastname);
-        console.log(`Firstname: ${result1}` + ' ' + `Lastname: ${result2}`);
-        setValidFirstname(result1);
-        setValidLastname(result2);
-    }, [firstname, lastname])
+        const result1 = name_REGEX.test(firstN);
+        const result2 = name_REGEX.test(lastN);
+        console.log(`firstN: ${result1}`, `lastN: ${result2}`);
+        setValidfirstN(result1);
+        setValidlastN(result2);
+    }, [firstN, lastN])
 
     //Checks if password follows PWD_REGEX and matches in-real-time
     useEffect(() => {
@@ -139,15 +139,18 @@ export default function Register() {
 
         //Security messaures for console scripting
         // If button enabled through Console JS commands
+        // v3 & v4 might cause issues. as of right now.
         const v1 = USER_REGEX.test(user);
         const v2 = PWD_REGEX.test(pwd);
-        if (!v1 || !v2) {
+        const v3 = name_REGEX.test(firstN && lastN);
+        const v4 = uniid_REGEX.test(uniid);
+        if (!v1 || !v2 || !v3 || !v4) {
             setErrMsg("Invalid Entry");
             return;
         };
         try {
             const response = await axios.post(REGISTER_URL,
-                JSON.stringify({user, pwd}),
+                JSON.stringify({user, pwd, firstN, lastN, uniid, stamClass, cpr, address, postal, city}),
                 {
                     headers: { 'Content-Type': 'application/json'},
                     withCredentials: true
@@ -183,7 +186,7 @@ export default function Register() {
 
         <section>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
-            <h1 className="user-register-section-h1">Register</h1>
+            <h1 className="user-register-section-h1">User Register</h1>
             <form className="user-registration-form" onSubmit={handleSubmit}>
                 <div>
                     <fieldset>
@@ -196,7 +199,7 @@ export default function Register() {
                             type="text"
                             id="username"
                             ref={userRef}
-                            autoComplete="off"
+                            autoComplete="nope"
                             onChange={(e) => setUser(e.target.value)}
                             required
                             aria-invalid={validName ? "false" : "true"}
@@ -218,15 +221,15 @@ export default function Register() {
                         <input 
                             type="text"
                             id="uniid"
-                            autoComplete="off"
-                            onChange={(e) => setUniId(e.target.value)}
+                            autoComplete="nope"
+                            onChange={(e) => setuniid(e.target.value)}
                             required
                             aria-invalid={validName ? "false" : "true"}
                             aria-describedby="uidnote"
-                            onFocus={() => setUniIdFocus(true)}
-                            onBlur={() => setUniIdFocus(false)}
+                            onFocus={() => setuniidFocus(true)}
+                            onBlur={() => setuniidFocus(false)}
                         />
-                        <p id="uidnote" className={uniidFocus && uniId && !validUniId ? "instructions" : "offscreen"}>
+                        <p id="uidnote" className={uniidFocus && uniid && !validuniid ? "instructions" : "offscreen"}>
                             2 to 24 characters <br/>
                             Must beging with a letter. <br/>
                             Letters, numbers, underscores, hyphens allowed.
@@ -240,7 +243,7 @@ export default function Register() {
                         <input 
                             type="text"
                             id="stamclass"
-                            autoComplete="off"
+                            autoComplete="nope"
                             onChange={(e) => setStamClass(e.target.value)}
                             required
                             aria-invalid={validName ? "false" : "true"}
@@ -258,21 +261,21 @@ export default function Register() {
 
                 <div>
                     <fieldset>
-                        <label htmlFor="firstname">
+                        <label htmlFor="firstN">
                             Fornavn:
                         </label>
                         <input 
                             type="text"
-                            id="firstname"
-                            autoComplete="off"
-                            onChange={(e) => setFirstname(e.target.value)}
+                            id="firstN"
+                            autoComplete="nope"
+                            onChange={(e) => setfirstN(e.target.value)}
                             required
-                            aria-invalid={validFirstname ? "false" : "true"}
+                            aria-invalid={validfirstN ? "false" : "true"}
                             aria-describedby="uidnote"
-                            onFocus={() => setFirstnameFocus(true)}
-                            onBlur={() => setFirstnameFocus(false)}
+                            onFocus={() => setfirstNFocus(true)}
+                            onBlur={() => setfirstNFocus(false)}
                         />
-                        <p id="uidnote" className={firstnameFocus && firstname && !validFirstname ? "instructions" : "offscreen"}>
+                        <p id="uidnote" className={firstNFocus && firstN && !validfirstN ? "instructions" : "offscreen"}>
                             2 to 24 characters <br/>
                             Must beging with a letter. <br/>
                             Letters, numbers, underscores, hyphens allowed.
@@ -280,21 +283,21 @@ export default function Register() {
                     </fieldset>
 
                     <fieldset>
-                        <label htmlFor="lastname">
+                        <label htmlFor="lastN">
                             Efternavn:
                         </label>
                         <input 
                             type="text"
-                            id="lastname"
-                            autoComplete="off"
-                            onChange={(e) => setLastname(e.target.value)}
+                            id="lastN"
+                            autoComplete="nope"
+                            onChange={(e) => setlastN(e.target.value)}
                             required
-                            aria-invalid={validFirstname ? "false" : "true"}
+                            aria-invalid={validfirstN ? "false" : "true"}
                             aria-describedby="uidnote"
-                            onFocus={() => setLastnameFocus(true)}
-                            onBlur={() => setLastnameFocus(false)}
+                            onFocus={() => setlastNFocus(true)}
+                            onBlur={() => setlastNFocus(false)}
                         />
-                        <p id="uidnote" className={lastnameFocus && lastname && !validLastname ? "instructions" : "offscreen"}>
+                        <p id="uidnote" className={lastNFocus && lastN && !validlastN ? "instructions" : "offscreen"}>
                             2 to 24 characters <br/>
                             Must beging with a letter. <br/>
                             Letters, numbers, underscores, hyphens allowed.
@@ -310,7 +313,7 @@ export default function Register() {
                         <input 
                             type="text"
                             id="cpr"
-                            autoComplete="off"
+                            autoComplete="nope"
                             onChange={(e) => setCPR(e.target.value)}
                             required
                             aria-invalid={validCPR ? "false" : "true"}
@@ -318,7 +321,7 @@ export default function Register() {
                             onFocus={() => setCPRFocus(true)}
                             onBlur={() => setCPRFocus(false)}
                         />
-                        <p id="uidnote" className={cprFocus && CPR && !validCPR ? "instructions" : "offscreen"}>
+                        <p id="uidnote" className={cprFocus && cpr && !validCPR ? "instructions" : "offscreen"}>
                             2 to 24 characters <br/>
                             Must beging with a letter. <br/>
                             Letters, numbers, underscores, hyphens allowed.
@@ -331,7 +334,7 @@ export default function Register() {
                         <input 
                             type="text"
                             id="email"
-                            autoComplete="off"
+                            autoComplete="nope"
                             onChange={(e) => setEmail(e.target.value)}
                             required
                             aria-invalid={validCPR ? "false" : "true"}
@@ -355,7 +358,7 @@ export default function Register() {
                         <input 
                             type="text"
                             id="city"
-                            autoComplete="off"
+                            autoComplete="nope"
                             onChange={(e) => setCity(e.target.value)}
                             required
                             aria-invalid={validCPR ? "false" : "true"}
@@ -376,7 +379,7 @@ export default function Register() {
                             <input 
                                 type="text"
                                 id="postal"
-                                autoComplete="off"
+                                autoComplete="nope"
                                 onChange={(e) => setPostal(e.target.value)}
                                 required
                                 aria-invalid={validCPR ? "false" : "true"}
@@ -397,7 +400,7 @@ export default function Register() {
                         <input 
                             type="text"
                             id="address"
-                            autoComplete="off"
+                            autoComplete="nope"
                             onChange={(e) => setAddress(e.target.value)}
                             required
                             aria-invalid={validCPR ? "false" : "true"}
@@ -425,6 +428,7 @@ export default function Register() {
                             id="password"
                             onChange={(e) => setPwd(e.target.value)}
                             required
+                            autoComplete="nope"
                             aria-invalid={validPwd ? "false" : "true"}
                             aria-describedby="pwdnote"
                             onFocus={() => setPwdFocus(true)}

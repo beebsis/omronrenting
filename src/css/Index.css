@@ -21,14 +21,14 @@ body {
 }
 
 .home-page-container,
-.inventory,
 .management-landing,
 .userlist-container,
-.rented-container,
-.rent-container {
+.rented-container {
   padding-top: 250rem;
 }
 
-.Content > section {
+.Content > section,
+.rent-container, 
+.inventory {
   padding-top: 100rem;
 }

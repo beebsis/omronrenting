@@ -7,3 +7,32 @@
 td {
     color: white;
 }
+
+.reserve-container {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.rented-header h3 {
+    font-size: 24rem;
+}
+
+
+.rented-header > button {
+    align-self: flex-end;
+    margin: 0;
+    background-image: linear-gradient(to right, #62EDA2 0%, #00A3FF  51%, #21668d  100%);
+    margin: 10px;
+    color: black;
+}
+
+.rented-header {
+    background-color: var(--secondary-color);
+    color: white;
+    display: flex;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+

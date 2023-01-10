@@ -6,8 +6,6 @@
 
 .user-registration-form {
     margin: 0 auto;
-    max-width: 720px;
-    padding-top: 15px;
 }
 
 .user-registration-form > div {
@@ -30,7 +28,6 @@
 .user-registration-form fieldset input {
     max-width: 100%;
     margin-top: .6em;
-    padding: 5px;
     max-height: 50px;
 }
 

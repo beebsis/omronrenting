@@ -1,5 +1,6 @@
 import '../css/components/table.css';
 import '../css/Rented.css';
+import '../css/components/buttons.css';
 import RentedData from '../data/rented.json';
 
 const background = "-background status-circle";
@@ -9,7 +10,8 @@ export default function Rented() {
         <>
             <div className="rented-container">
                 <div className="rented-header">
-                    
+                    <h3>Rented Equipment</h3>
+                    <button className="btns">Send Invoice</button>
                 </div>
                 <div className="rented-list">
                     <table>

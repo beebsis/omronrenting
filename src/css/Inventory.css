@@ -1,12 +1,70 @@
 .inventory {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
     color: white;
     gap: 75rem;
+    padding-left: 5vw;
+    padding-righT: 5vw;
 }
 
 .inventory h3 {
     font-size: 24rem;
+}
+
+.table-inventory-container {
+    width: 100%;
+}
+
+.inventory-list {
+    background-color: var(--secondary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+
+.inventory-list h3 {
+    font-size: 26rem;
+}
+
+.inventory-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.inventory-search-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    align-content:  center;
+    gap: 15px;
+}
+
+#search_inventory {
+    max-width: 100%;
+    max-height: 50px;
+    border-radius: 10rem; 
+    outline: none;
+    font-size: 20rem;
+    border: 3rem solid var(--third-color);
+    background: radial-gradient(#62eda3 0%, #62ABED 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 5px;
+    padding-left: 15px;
+}
+
+#search_inventory:hover, #search_inventory:focus {
+    border: 3rem solid var(--radient2-color);
+    background: radial-gradient(#62eda3 0%, #62ABED 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inventory-list > div label {
+    font-size: 24rem;
+    color: var(--third-color);
 }
