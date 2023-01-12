@@ -6,6 +6,7 @@ import { useRef, useState, useEffect } from 'react';
 import axios from '../api/axios';
 
 const ADD_ITEM_URL = '/createitem';
+const GET_ITEMS_URL = '/items'
 const number_REGEX = /^([0-9]{1,30})$/;
 
 const background = "-background status-circle";
@@ -48,24 +49,24 @@ export default function Inventory() {
 
         const v1 = number_REGEX.test(vareSerial);
 
-    if (!v1) {
-        setErrMsg("Invalid Entry");
-        return;
-    };
+        if (!v1) {
+            setErrMsg("Invalid Entry");
+            return;
+        };
 
-    try {
-        const response = await axios.post(ADD_ITEM_URL,
-            JSON.stringify({fabri, modelSerie, specType, vareSerial}),
-            {
-                headers: { 'Content-Type': 'application/json'},
-                withCredentials: true
-            }
-        );
-        console.log(response.data);
-        console.log(response.accessToken);
-        console.log(JSON.stringify(response));
-        setSuccess(true);
-        // clear input fields out of registration fields
+        try {
+            const response = await axios.post(ADD_ITEM_URL,
+                JSON.stringify({fabri, modelSerie, specType, vareSerial}),
+                {
+                    headers: { 'Content-Type': 'application/json'},
+                    withCredentials: true
+                }
+            );
+            console.log(response.data);
+            console.log(response.accessToken);
+            console.log(JSON.stringify(response));
+            setSuccess(true);
+            // clear input fields out of registration fields
         } catch(err) {
             if (!err?.response) {
                 setErrMsg('No response from the Server');
@@ -77,6 +78,14 @@ export default function Inventory() {
             errRef.current.focus(); //For screen readers
         }
     }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const data = await axios.get (GET_ITEMS_URL)
+            console.log('products', data);
+        };
+        fetchData();
+    }, []);
 
         return (
             <>
