@@ -1,0 +1,11 @@
+.login-panel-student {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-logins {
+    font-size: 24px;
+}

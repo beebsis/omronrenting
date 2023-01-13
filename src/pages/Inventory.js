@@ -1,15 +1,13 @@
 // import { Component } from 'react';
 import '../css/Inventory.css';
 import '../css/components/table.css';
-//import data from '../data/equipment.json';
+import GetAllItems from '../components/GetAllItems';
 import { useRef, useState, useEffect } from 'react';
 import axios from '../api/axios';
 
 const ADD_ITEM_URL = '/createitem';
 const GET_ITEMS_URL = '/items'
 const number_REGEX = /^([0-9]{1,30})$/;
-
-const background = "-background status-circle";
 
 
 export default function Inventory() {
@@ -26,7 +24,6 @@ export default function Inventory() {
     const [vareSerialFocus, setVareSerialFocus] = useState(false);
 
     const [specType, setSpecType] = useState('');
-    const [specTypeFocus, setSpecTypeFocus] = useState(false);
     
     //Info message states
     const [errMsg, setErrMsg] = useState('');
@@ -78,15 +75,6 @@ export default function Inventory() {
             errRef.current.focus(); //For screen readers
         }
     }
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const data = await axios.get (GET_ITEMS_URL)
-            console.log('products', data);
-        };
-        fetchData();
-    }, []);
-
         return (
             <>
         {success ? (
@@ -173,45 +161,7 @@ export default function Inventory() {
                             <input type="text" name="search_inventory" id="search_inventory" placeholder="Search"/>
                         </div>
                     </div>
-                    <table className="inventory-pc-list">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Mfr.</th>
-                                <th>Model</th>
-                                <th>Type</th>
-                                <th>Serial</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                {/* Set classname based on inv */}
-                                <td className="inv">
-                                    {/* classname based on status */}
-                                    <div className={background}></div></td>
-                            </tr>
-                        {/*  {data.computers.map((postData, i) => {
-                            console.log(postData);
-                            return (
-                                <tr key={i}>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td className="inv">
-                                        <div className={background}></div></td>
-                                </tr>
-                            );
-                        })} */}
-                        </tbody>
-                    </table>
+                    <GetAllItems />
                 </div>
             </div>
 

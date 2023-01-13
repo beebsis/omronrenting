@@ -112,6 +112,18 @@ label .invalid {
 }
 
 
+.login-panel-student {
+    margin-left: 40rem;
+}
+
+.errmsg {
+    font-size: 24px;
+    text-align: center;
+    background-color: rgb(145, 86, 19);
+    padding: 5rem;
+    transition: .1s ease-in-out;
+}
+
 
 
 
