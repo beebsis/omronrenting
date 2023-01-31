@@ -5,7 +5,7 @@ import InventoryList from "./pages/Inventory";
 import ManagementPage from "./pages/ManagementLanding";
 import UsersList from "./pages/Users";
 import RentedList from "./pages/Rented";
-import Rent from "./hooks/equipmentLending";
+import Rent from "./pages/Renting.js";
 import Missing from "./pages/error404";
 import Unauthorized from "./pages/unautherized";
 import MyRents from "./pages/MyRents";

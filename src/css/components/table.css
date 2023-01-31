@@ -26,18 +26,18 @@ table tbody tr {
     border-bottom: 2px solid #009879;
 }
 
-
-.OutOfStock, .overdue, .inv-OOF {
-    color: var(--warning-color);
+.Out_Of_Stock-background, .overdue, .inv-OOF {
+    background-color: var(--warning-color);
 }
 
-.Reserved, .reserved, .inv-r {
-    color: var(--radient2-color);
+.Reserved-background, .reserved, .inv-r {
+    background-color: var(--radient2-color);
 }
 
-.InStock, .rented, .inv-IS {
-    color: var(--radient1-color);
+.In_Stock-background, .rented, .inv-IS {
+    background-color: var(--radient1-color);
 }
+
 
 .rented-background, .inv-IS-background {
     background-color: var(--radient1-color);
@@ -70,6 +70,10 @@ td {
     display: flex;
     gap: 15rem;
     justify-content: flex-end;
+}
+
+.ind-background {
+    background-color: var(--radient1-color);
 }
 
 @media (max-width: 500px) {

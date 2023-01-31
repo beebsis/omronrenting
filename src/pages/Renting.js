@@ -5,68 +5,10 @@ import '../css/components/form.css';
 /* eslint-disable no-lone-blocks */
 import { useRef, useState, useEffect } from 'react';
 import axios from '../api/axios';
-const createOrder_URL = '/createOrder';
 
 export default function Rent() {
-    const errRef = useRef();
-
-    const [fabri, setFabri] = useState('');
-    const [fabriFocus, setFabriFocus] = useState('false');
     
-    const [modelSerie, setModelSerie] = useState('');
-    const [modelSerieFocus, setModelSerieFocus] = useState('false');
-
-    const [specType, setSpecType] = useState('');
-    const [specTypeFocus, setSpecTypeFocus] = useState('false');
     
-    const [vareSerial, setVareSerial] = useState('');
-    const [vareSerialFocus, setVareSerialFocus] = useState('false');
-
-    const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
-
-    useEffect(() => {
-        const result1 = fabri;
-        const result2 = modelSerie;
-        const result3 = specType;
-        const result4 = vareSerial;
-    });
-
-    useEffect(() => {
-        setErrMsg('');
-    });
-
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-
-        if (!fabri || !modelSerie || !specType || !vareSerial) {
-            setErrMsg("Invalid Entry");
-            return;
-        };
-        try {
-            const response = await axios.post(createOrder_URL,
-                JSON.stringify({fabri, modelSerie, specType, vareSerial}),
-                {
-                    headers: { 'Content-Type': 'application/json'},
-                    withCredentials: true
-                });
-                console.log(response.data);
-                console.log(response.accesstoken);
-                console.log(JSON.stringify(response));
-                setSuccess(true);
-            } catch(err) {
-                if (!err?.response) {
-                    setErrMsg('No response from the Server');
-                } else if (err.response?.status === 409) {
-                    setErrMsg('Username taken');
-                } else {
-                    setErrMsg('registration failed');
-                }
-                errRef.current.focus(); //For screen readers
-            }
-    };
-
-
     return (
         <>
         <div className="rent-container">

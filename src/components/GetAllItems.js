@@ -2,80 +2,53 @@ import {useState, useEffect } from 'react';
 import axios from '../api/axios.js';
 
 const background = "-background status-circle";
-const GETITEMS_URL = '/items';
+const GETITEMS_URL = 'http://localhost:3500/items';
 
-const Prop = (props) => {
-    return(
-        <tr>
-                <td id={props.vare._id}></td>
-                <td>{props.vare.fabrikant}</td>
-                <td>{props.vare.model}</td>
-                <td>{props.vare.serial}</td>
-                <td>{props.vare.typer}</td>
-                <td className="inv">
-                    {props.vare.status}
-                    <div className={background}></div>
-                </td>
-            </tr>
-    )
-}
 
-const GetAllItems = () => {
-    const [itemList, setItemList] = useState({ items: []})
-
+export default function GetAllItems() {
+    const [items, getItems] = useState('');
+    
     useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios.get(GETITEMS_URL);
-            setItemList({ items: result.data})
-            //setVare(res.data.vare)
-            console.log(result.data);
-        };
-        fetchData();
-        }, []);
+        axios.get(GETITEMS_URL).then((response) => {
+            getItems(response.data);
+        });
+    }, []);
+    
+    if (!items) return null;
 
     return (
         <>
-        <section>
-        <table className="inventory-pc-list">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Mfr.</th>
-                    <th>Model</th>
-                    <th>Type</th>
-                    <th>Serial</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                {/*
-                {
-                    itemList.items.map((current, i) => (
-                        <Prop item={current} key={i} />
-                    ))
-                }
-                */} 
-                <tr>
-                    <td>1</td>
-                    <td>test fabrikant</td>
-                    <td>test model</td>
-                    <td>test serial</td>
-                    <td> test typer</td>
-                    <td className="inv">
-                        test status
-                        <div className={background}></div>
-                    </td>
-            </tr>
-            </tbody>
-        </table>
-        </section>
+            <section>
+            <table className="inventory-pc-list">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Mfr.</th>
+                        <th>Model</th>
+                        <th>Type</th>
+                        <th>Serial</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {items && items.map((item) =>
+                        <tr key={item._id}>
+                            <td>{item._id}</td>
+                            <td>{item.fabrikant}</td>
+                            <td>{item.model}</td>
+                            <td>{item.typer}</td>
+                            <td>{item.serial}</td>
+                            <td className="inv">
+                                {item.status}
+                                <div className={item.status + background}></div>
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
+            </section>
         </>
     )
 
 
-}
-
-
-
-
-export default GetAllItems;
+};

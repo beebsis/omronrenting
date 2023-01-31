@@ -17,8 +17,8 @@ import { faCircleExclamation,  faCheckCircle} from "@fortawesome/free-solid-svg-
     One digit & 1 special character, 8 to 24 characters
 */
 const USER_REGEX = /^[a-zA][a-zA-Z0-9-_]{3,23}$/;
-const uniid_REGEX = /^[a-zA][a-zA-Z0-9-_]{4}$/;
-const name_REGEX = /^[A-Za-z]{1}$/;
+const uniid_REGEX = /^[a-zA][a-zA-Z0-9-_]{7}$/;
+const name_REGEX = /^[A-Za-z]{1,50}$/;
 const PWD_REGEX = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%]).{8,24}$/;
 
 const REGISTER_URL = '/register';
