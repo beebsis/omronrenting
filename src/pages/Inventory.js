@@ -20,7 +20,7 @@ export default function Inventory() {
     const [modelSerieFocus, setModelSerieFocus] = useState(false);
     
     const [vareSerial, setVareSerial] = useState('');
-    const [validVareSerial, setValidVareSerial] = useState(false)
+    const [validVareSerial, setValidVareSerial] = useState(false);
     const [vareSerialFocus, setVareSerialFocus] = useState(false);
 
     const [specType, setSpecType] = useState('');
