@@ -4,29 +4,17 @@ import {useRef, useState, useEffect, useContext } from 'react';
 import AuthContext from './AuthProvider';
 import axios from '../api/axios.js';
 
-const LOGIN_URL = '/auth';
+const LOGIN_URL = 'auth/';
 
 const Login = () => {
-
-    const adminUser = {
-        username: "Admin",
-        password: "12345"
-    }
-
-    const regularUser = {
-        username: "regularUser",
-        password: "12345"
-    }
-
-
     const { setAuth } = useContext(AuthContext);
     const userRef = useRef();
     const errRef = useRef();
 
-    const [ user, setUser] = useState('');
-    const [pwd, setPwd] = useState('');
-    const [errMsg, setErrMsg] = useState('');
-    const [success, setSuccess] = useState(false);
+    const [ user, setUser ] = useState('');
+    const [ pwd, setPwd ] = useState('');
+    const [ errMsg, setErrMsg ] = useState('');
+    const [ success, setSuccess ] = useState(false);
 
     useEffect(() => {
         userRef.current.focus();
@@ -40,6 +28,8 @@ const Login = () => {
         e.preventDefault();
 
         try {
+            console.log('Test in try');
+            //Tilføjet axios + loginrul
             const response = await axios.post(LOGIN_URL,
                 JSON.stringify({ user, pwd }),
                 {
@@ -48,15 +38,20 @@ const Login = () => {
                 }
             );
             console.log(JSON.stringify(response?.data));
-            //console.log(JSON.stringify(response));
+            console.log(JSON.stringify(response));
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
-            setAuth({ user, pwd, roles, accessToken });
+            console.log('end of try');
+            setAuth({ user, pwd, roles, accessToken }); //Throws error
             setUser('');
             setPwd('');
             setSuccess(true);
+            console.log(setSuccess);
         } catch (err) {
             if (!err?.response) {
+                console.log('Test i Err 1');
+                console.log(user);
+                console.log(pwd);
                 setErrMsg('Intent server svar');
             } else if (err.response?.status === 400) {
                 setErrMsg('Mangle på brugernavn of kodeord');
@@ -75,7 +70,7 @@ const Login = () => {
                     <h1>You are logged in!</h1>
                     <br />
                     <p>
-                        <a href="../">Go to Home</a>
+                        <a href="/home">Go to Home</a>
                     </p>
                 </section>
             ) : (
@@ -115,21 +110,11 @@ const Login = () => {
                                 <button>Sign In</button>
                             </form>
                         </div>
-                        <div className="user-logins">
-                            <p>logins:</p>
-                            <p>Name: <span>{adminUser.username}</span></p>
-                            <p>Password: <span>{adminUser.password}</span></p>
-                            <br />
-                            <p>Name: <span>{regularUser.username}</span></p>
-                            <p>Password: <span>{regularUser.password}</span></p>
-
-                        </div>
                     </div>
                 </section>
             )}
         </>
     )
 }
-
 
 export default Login;

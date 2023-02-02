@@ -80,7 +80,7 @@ export default function App() {
           <div className="Content">
             <Routes>
               {/* Public routes */}
-              <Route exact path="/" element={<Home />} />
+              <Route exact path="/" element={<Landing />} />
               <Route exact path="/home" element={<Home />} />
               <Route path="/contact" element={<ContactInfo />} />
               <Route path="/unauthorized" element={<Unauthorized />} />

@@ -2,7 +2,6 @@
 import InfoLinks from '../components/InfoLinks.js';
 import '../css/Main.css';
 import '../css//components/buttons.css';
-import Login from '../components/login';
 
 import React, { Component } from 'react';
 
@@ -23,7 +22,6 @@ class Home extends Component {
                 </div>
 
                 <div className="splitter"></div>
-                <Login />
             </div>
         )
     }
