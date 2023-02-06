@@ -29,7 +29,7 @@ const Login = () => {
 
         try {
             console.log('Test in try');
-            //Tilføjet axios + loginrul
+            //Tilføjet axios + loginUrl
             const response = await axios.post(LOGIN_URL,
                 JSON.stringify({ user, pwd }),
                 {
@@ -42,6 +42,10 @@ const Login = () => {
             const accessToken = response?.data?.accessToken;
             const roles = response?.data?.roles;
             console.log('end of try');
+            /**
+            * ! setAuth for some reason doesn't work - we get the correct response
+            * ! and the correct info get send. But the Auth doesn't respond back.
+            */
             setAuth({ user, pwd, roles, accessToken }); //Throws error
             setUser('');
             setPwd('');
@@ -52,7 +56,7 @@ const Login = () => {
                 console.log('Test i Err 1');
                 console.log(user);
                 console.log(pwd);
-                setErrMsg('Intent server svar');
+                setErrMsg('Intet server svar');
             } else if (err.response?.status === 400) {
                 setErrMsg('Mangle på brugernavn of kodeord');
             } else if (err.response?.status === 401) {

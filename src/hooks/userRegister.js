@@ -150,7 +150,7 @@ export default function Register() {
         };
         try {
             const response = await axios.post(REGISTER_URL,
-                JSON.stringify({user, pwd, firstN, lastN, uniid, stamClass, cpr, address, postal, city}),
+                JSON.stringify({user, pwd, firstN, lastN, email, uniid, stamClass, cpr, address, postal, city}),
                 {
                     headers: { 'Content-Type': 'application/json'},
                     withCredentials: true
@@ -337,7 +337,7 @@ export default function Register() {
                             autoComplete="nope"
                             onChange={(e) => setEmail(e.target.value)}
                             required
-                            aria-invalid={validCPR ? "false" : "true"}
+                            aria-invalid={validEmail ? "false" : "true"}
                             aria-describedby="uidnote"
                             onFocus={() => setEmailFocus(true)}
                             onBlur={() => setEmailFocus(false)}
